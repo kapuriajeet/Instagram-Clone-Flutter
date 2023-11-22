@@ -6,8 +6,8 @@ class User {
   final String photoUrl;
   final String username;
   final String bio;
-  final List followers;
-  final List following;
+  final List? followers;
+  final List? following;
 
   const User(
       {required this.username,
@@ -15,8 +15,8 @@ class User {
       required this.photoUrl,
       required this.email,
       required this.bio,
-      required this.followers,
-      required this.following});
+      this.followers,
+      this.following});
 
   static User fromSnap(DocumentSnapshot snap) {
     var snapshot = snap.data() as Map<String, dynamic>;
